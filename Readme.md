@@ -12,3 +12,5 @@ With MNotes2 you can now create qrcode on the fly.
 Selecting a text and a right mouse click shows a qrcode of the selected text.
 This can be very useful if you want quickly send data to a mobile device.
 
+Note: The qrcode feature may only work with KDE because of using KDE/prison 
+
