@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/busy.png</file>
+        <file>images/delete.png</file>
+        <file>images/delete_icon.png</file>
+        <file>images/delete_icon_pressed.png</file>
+        <file>images/go-previous.png</file>
+        <file>images/kreis.svg</file>
+        <file>images/list-remove.png</file>
+        <file>images/list.png</file>
+        <file>images/menu.png</file>
+        <file>images/MNotes-icon.png</file>
+        <file>images/notes.png</file>
+        <file>images/process-stop.svg</file>
+        <file>images/view-pim-notes.png</file>
+        <file>images/lupe.svg</file>
+        <file>BusyIndicator.qml</file>
+        <file>Config.qml</file>
+        <file>ConfigFormular.ui.qml</file>
+        <file>Element.qml</file>
+        <file>Element2.qml</file>
+        <file>ElementForm.ui.qml</file>
+        <file>main.qml</file>
+        <file>nextnote.js</file>
+        <file>Note.qml</file>
+        <file>NoteFormular.ui.qml</file>
+        <file>Page1Form.ui.qml</file>
+        <file>Page2.qml</file>
+        <file>Search.qml</file>
+        <file>SearchFormular.ui.qml</file>
+        <file>backend.js</file>
+        <file>Page2Form.ui.qml</file>
+        <file>mnotes.ico</file>
+        <file>Notifier.qml</file>
+        <file>NotifierFormular.ui.qml</file>
+        <file>images/lupe.png</file>
+        <file>images/qrcode.png</file>
+    </qresource>
+</RCC>
