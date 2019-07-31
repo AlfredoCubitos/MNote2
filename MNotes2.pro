@@ -33,7 +33,6 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-include(/usr/lib64/qt5/mkspecs/modules/qt_Prison.pri)
 
 HEADERS += \
     mnotesconfig.h \

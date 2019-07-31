@@ -5,6 +5,8 @@ SearchFormular {
 
     property alias search: search
     property string objName
+    property var note
+
     state: "hidden"
     height: 0
     opacity: 0.1
@@ -24,6 +26,17 @@ SearchFormular {
         if (search.visible || search.activeFocus){
             textInput.text = searchString.length > 0 ? searchString  : qsTr("Search String")
         }
+        if(document.curpos().length > 0)
+        {
+            if (document.curpos()[0] < note.length /2)
+            {
+                note.cursorPosition = note.length /2
+                note.cursorPosition =  document.curpos()[0]
+            }
+
+        }
+
+
     }
 
     states: [

@@ -4,7 +4,7 @@ import org.kde.prison 1.0 as Prison
 //import de.bibuweb.mnotes 1.0
 NoteFormular {
 
-  //  property alias note: note
+    property alias note: note
     id: note
 
     property int indexId
@@ -15,8 +15,9 @@ NoteFormular {
 
     textArea.persistentSelection: true
 
+
     textArea.onPressed: {
-        console.log(event.button)
+        //console.log(event.button)
         if (event.button === Qt.RightButton && textArea.selectedText.length > 0)
         {
             console.log(textArea.selectedText)
@@ -36,7 +37,7 @@ NoteFormular {
         }
     }
 
-    Popup{
+   Popup{
         id: qrcode
         width: appWindow.width - 4
         height: width

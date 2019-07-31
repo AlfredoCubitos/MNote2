@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
     MNotesNetwork network;
     MnotesConfig config;
 
+    context->setContextProperty("document",&mnotes);
     context->setContextProperty("netWork",&network);
     context->setContextProperty("configData",&config);
 

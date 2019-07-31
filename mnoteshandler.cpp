@@ -76,7 +76,6 @@ void MNotesHandler::highLighter(const QString &search)
 
     cursor.endEditBlock();
 
-
 }
 /**
  * @brief MNotesHandler::clearHighlight
@@ -90,7 +89,7 @@ void MNotesHandler::clearHighlight()
     QTextCharFormat colorFormat;
     colorFormat.setBackground(QColor(bgcolor));
      while (!cursor.isNull() && !cursor.atEnd()) {
-         cursor.movePosition(QTextCursor::WordRight,  QTextCursor::KeepAnchor);
+         cursor.movePosition(QTextCursor::WordRight);
          cursor.mergeCharFormat(colorFormat);
      }
 }
@@ -138,7 +137,7 @@ void MNotesHandler::findNext()
        // qDebug() << cur_pos.at(i) << ":: " << m_curpos;
         if (cur_pos.at(i) > m_curpos)
         {
-             cursor.setPosition(cur_pos.at(i));
+             cursor.setPosition(cur_pos.at(i).toInt());
              m_curpos = cursor.position(); //save cursor position which is at end of word
 
             //move cursor to begin of word -> curpos changes

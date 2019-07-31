@@ -4,12 +4,6 @@ import QtQml.Models 2.2
 
 import "nextnote.js" as NN
 
-
-/*use this import for Android
-  * if not it throws "component not ready" error
-*/
-//import "qrc:/"
-
 Page2Form {
 
     id: page2
@@ -72,6 +66,7 @@ Page2Form {
     Search{
         id: search
         objName: note.textArea.objectName
+        note:  note.textArea
     }
 
     Note {

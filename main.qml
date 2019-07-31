@@ -217,6 +217,7 @@ ApplicationWindow {
                 }
 
                 search.objName = note.textArea.objectName
+                search.note = note.textArea
             }
 
 

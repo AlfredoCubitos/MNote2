@@ -17,7 +17,7 @@ public:
 
   //  QQuickItem *target() { return m_target; }
 
-    QVariant curpos() { return m_curpos; }
+    Q_INVOKABLE QVariantList curpos() { return cur_pos; }
 
     void getTextDocument(QString objName);
     void setTextObject(QObject *obj);
@@ -34,7 +34,7 @@ private:
     QQuickItem *sItem;
     void clearHighlight();
 
-     QList<int> cur_pos;
+     QVariantList cur_pos;
 
      void countMethods(QObject *obj);
 
