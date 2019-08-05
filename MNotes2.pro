@@ -33,6 +33,9 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+android: DEFINES += __android
+
+message(Defines: $$DEFINES)
 
 HEADERS += \
     mnotesconfig.h \

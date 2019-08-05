@@ -54,7 +54,6 @@ Page2Form {
 
     ListView {
         id: listView
-        anchors.fill: parent
         model: elementModel
         delegate: Element2 {
             id: element

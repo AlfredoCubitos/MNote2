@@ -72,7 +72,6 @@ Page {
 
     ListView {
         id: listView
-        anchors.fill: parent
         model: elementModel
         delegate: Element {
             id: element

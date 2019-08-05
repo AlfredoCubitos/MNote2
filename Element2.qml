@@ -24,7 +24,6 @@ ElementForm{
             label.readOnly = false
             note.textArea.focus = true
             note.textArea.cursorVisible = true
-            note.textArea.selectionStart = 1
         }
 
     }
