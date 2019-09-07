@@ -14,7 +14,7 @@ Rectangle {
             id: textArea
             objectName: "noteText"
             text: ""
-            anchors.fill: parent
+            visible: true
             selectByMouse: true
         }
     }
