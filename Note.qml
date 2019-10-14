@@ -10,7 +10,7 @@ NoteFormular {
     property int indexId
     property string noteObjName: textArea.objectName
     property alias qrcode: qrcode
-  //  anchors.fill: parent
+    anchors.fill: parent
     Accessible.name: "mnotesHandler"
 
     textArea.persistentSelection: true

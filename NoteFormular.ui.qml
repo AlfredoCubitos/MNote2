@@ -9,13 +9,16 @@ Rectangle {
     property alias textArea: textArea
     visible: false
     ScrollView {
+        id: scrollView
         anchors.fill: parent
+        ScrollBar.horizontal.policy: ScrollBar.AlwaysOn
+
         TextArea {
             id: textArea
             objectName: "noteText"
-            text: ""
             visible: true
             selectByMouse: true
+
         }
     }
 }
