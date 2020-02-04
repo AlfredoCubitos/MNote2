@@ -8,6 +8,7 @@
 
 
 #define BGCOLOR "#FFEBCD"
+#define NOTECOLOR "#e4e440"
 
 
 MNotesHandler::MNotesHandler()
@@ -42,8 +43,7 @@ void MNotesHandler::highLighter(const QString &search)
 
     QTextCursor highlightCursor = QTextCursor(d_mnote);
     QTextCursor cursor = QTextCursor(d_mnote);
-
-
+    cur_pos.clear();
 
     if (d_mnote->availableUndoSteps() > 0)
     {
@@ -75,6 +75,7 @@ void MNotesHandler::highLighter(const QString &search)
     }
 
     cursor.endEditBlock();
+    cursor.movePosition(QTextCursor::StartOfWord, QTextCursor::MoveAnchor,cur_pos.at(0).toInt());
 
 }
 /**
@@ -87,11 +88,11 @@ void MNotesHandler::clearHighlight()
 {
     QTextCursor cursor = QTextCursor(d_mnote);
     QTextCharFormat colorFormat;
-    colorFormat.setBackground(QColor(bgcolor));
-     while (!cursor.isNull() && !cursor.atEnd()) {
-         cursor.movePosition(QTextCursor::WordRight);
-         cursor.mergeCharFormat(colorFormat);
-     }
+    cursor.select(QTextCursor::Document);
+    colorFormat.setBackground(QColor(NOTECOLOR));
+
+    cursor.mergeCharFormat(colorFormat);
+
 }
 
 

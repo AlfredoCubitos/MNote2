@@ -54,16 +54,16 @@ SearchFormular {
             from: "hidden"
             to: "visible"
             SequentialAnimation {
-                NumberAnimation{ target: search; property: "height"; to: 40; duration: 300}
-                NumberAnimation{ target: search; property: "opacity"; to: 1.0; duration: 300}
+                NumberAnimation{ target: search; property: "height"; to: 40; duration: 200}
+                NumberAnimation{ target: search; property: "opacity"; to: 1.0; duration: 200}
             }
         },
         Transition {
             from: "visible"
             to: "hidden"
             SequentialAnimation {
-                NumberAnimation{ target: search; property: "height"; to: 0.0; duration: 500}
-                NumberAnimation{ target: search; property: "opacity"; to: 0.1; duration: 300}
+                NumberAnimation{ target: search; property: "height"; to: 0.0; duration: 400}
+                NumberAnimation{ target: search; property: "opacity"; to: 0.1; duration: 200}
 
             }
         }
