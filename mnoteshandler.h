@@ -13,6 +13,7 @@ class MNotesHandler : public QObject
 
 public:
     explicit MNotesHandler();
+
     void highLighter(const QString &search);
 
   //  QQuickItem *target() { return m_target; }
@@ -24,7 +25,6 @@ public:
 
 private:
     QObject *textObject;
-    QString bgcolor;
     QObject *App;
     QTextDocument *d_mnote;
     QQuickItem *m_target;

@@ -1,10 +1,10 @@
 #include "mnoteshandler.h"
 #include <QQuickItem>
 #include <QDebug>
-#include <QtQml>
+//#include <QtQml>
 #include <QTextCharFormat>
 #include <QTextCursor>
-
+#include <QDebug>
 
 
 #define BGCOLOR "#FFEBCD"
@@ -16,6 +16,7 @@ MNotesHandler::MNotesHandler()
 
 }
 
+
 void MNotesHandler::setTextObject(QObject *obj){
     textObject = obj;
 }
@@ -24,7 +25,7 @@ void MNotesHandler::getTextDocument(QString objName){
     QObject *doc = textObject->findChild<QObject*>(objName);
 
      m_target = qobject_cast<QQuickItem*>(doc);
-     bgcolor = m_target->parent()->property("color").value<QColor>().name();
+
 }
 
 /**
@@ -39,7 +40,6 @@ void MNotesHandler::highLighter(const QString &search)
     if (! d_mnote)
         return;
 
-//qDebug() << "search " << search;
 
     QTextCursor highlightCursor = QTextCursor(d_mnote);
     QTextCursor cursor = QTextCursor(d_mnote);
@@ -60,12 +60,10 @@ void MNotesHandler::highLighter(const QString &search)
     colorFormat.setBackground(QColor(BGCOLOR));
 
 
-
     while (!highlightCursor.isNull() && !highlightCursor.atEnd()) {
         highlightCursor = d_mnote->find(search, highlightCursor);
 
         if (!highlightCursor.isNull()) {
-
             cur_pos.append(highlightCursor.position());
 
             highlightCursor.movePosition(QTextCursor::EndOfWord,  QTextCursor::KeepAnchor);
@@ -75,7 +73,8 @@ void MNotesHandler::highLighter(const QString &search)
     }
 
     cursor.endEditBlock();
-    cursor.movePosition(QTextCursor::StartOfWord, QTextCursor::MoveAnchor,cur_pos.at(0).toInt());
+    if (!cur_pos.isEmpty())
+        cursor.movePosition(QTextCursor::StartOfWord, QTextCursor::MoveAnchor,cur_pos.at(0).toInt());
 
 }
 /**
@@ -109,7 +108,6 @@ void MNotesHandler::clearHighlight()
  */
 void MNotesHandler::searchSignal(const QString &str, const QString &objName)
 {
-
     getTextDocument(objName);
     if (!m_target)
         return;

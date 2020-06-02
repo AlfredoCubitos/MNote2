@@ -205,6 +205,7 @@ ApplicationWindow {
 
            Search{
                id: search
+
            }
 
             Component.onCompleted:{

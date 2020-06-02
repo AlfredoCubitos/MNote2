@@ -15,7 +15,6 @@ NoteFormular {
 
     textArea.persistentSelection: true
 
-
     textArea.onPressed: {
         //console.log(event.button)
         if (event.button === Qt.RightButton && textArea.selectedText.length > 0)

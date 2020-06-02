@@ -21,7 +21,7 @@ SearchFormular {
     textInput.onEditingFinished: {
        // console.log("edtingFinished " + objName)
         searchString = textInput.text
-        searchSignal(textInput.text, objName)
+        searchSignal(searchString, objName)
 
         if (search.visible || search.activeFocus){
             textInput.text = searchString.length > 0 ? searchString  : qsTr("Search String")

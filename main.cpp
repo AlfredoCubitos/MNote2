@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QtQml>
 #include <QIcon>
+#include <QDebug>
 
 #include "mnoteshandler.h"
 #include "mnotesnetwork.h"
@@ -29,7 +30,6 @@ int main(int argc, char *argv[])
     QQmlContext *context = new QQmlContext(engine.rootContext());
     QQmlComponent component(&engine,url);
 
-
     MNotesHandler mnotes;
     MNotesNetwork network;
     MnotesConfig config;
@@ -39,6 +39,10 @@ int main(int argc, char *argv[])
     context->setContextProperty("configData",&config);
 
     QObject *appWindow = component.create(context);
+    if (component.isError())
+    {
+        qDebug() << component.errorString();
+    }
     mnotes.setTextObject(appWindow);
 
     QObject::connect(appWindow,SIGNAL(searchSignal(QString, QString)),&mnotes,SLOT(searchSignal(QString, QString)));
